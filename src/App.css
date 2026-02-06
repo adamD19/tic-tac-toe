@@ -1,0 +1,170 @@
+.page {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #ffffff;
+}
+
+.card {
+  width: min(520px, 100%);
+  padding: 24px;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  background: white;
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.status {
+  margin: 12px 0 16px;
+  font-size: 16px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 12px 0 16px;
+}
+
+.cell {
+  height: 110px;
+  border-radius: 14px;
+  border: 1px solid #ccc;
+  font-size: 48px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #fafafa;
+}
+
+.cell:hover {
+  background: #f3f3f3;
+}
+
+.cell.win {
+  border-color: #111;
+  background: #eee;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.reset {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+}
+
+.reset:hover {
+  background: #f5f5f5;
+}
+
+.hint {
+  margin-top: 14px;
+  color: #555;
+  font-size: 14px;
+}
+
+/* ---------- Toggle button ---------- */
+.toggle {
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.toggle:hover {
+  background: #f5f5f5;
+}
+
+.toggle.on {
+  border-color: #111;
+}
+
+/* ---------- FUN MODE THEME ---------- */
+/* When funMode is on, App.jsx adds class "fun" to .page */
+.page.fun {
+  background: radial-gradient(circle at top left, #ffe08a, transparent 45%),
+    radial-gradient(circle at bottom right, #9ae6ff, transparent 50%),
+    linear-gradient(135deg, #fff 0%, #f7f7ff 100%);
+}
+
+.page.fun .card {
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.page.fun .status {
+  font-weight: 700;
+}
+
+.page.fun .toggle {
+  border: none;
+  background: linear-gradient(90deg, #ff7ad9, #7afcff);
+  color: #111;
+  font-weight: 700;
+}
+
+.page.fun .toggle:hover {
+  filter: brightness(1.02);
+}
+
+.page.fun .reset {
+  border: none;
+  background: linear-gradient(90deg, #a78bfa, #f472b6);
+  color: #111;
+  font-weight: 700;
+}
+
+.page.fun .reset:hover {
+  filter: brightness(1.03);
+}
+
+/* Fun board cells */
+.page.fun .cell {
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.page.fun .cell:hover {
+  transform: translateY(-1px);
+  transition: transform 0.08s ease;
+}
+
+/* In fun mode, style X and O differently */
+.page.fun .cell.xCell {
+  color: #e11d48; /* red */
+  text-shadow: 0 2px 10px rgba(225, 29, 72, 0.25);
+}
+
+.page.fun .cell.oCell {
+  color: #2563eb; /* blue */
+  text-shadow: 0 2px 10px rgba(37, 99, 235, 0.25);
+}
+
+/* Winning cells in fun mode */
+.page.fun .cell.win {
+  background: linear-gradient(135deg, #fff6a8, #b9f6ff);
+  border-color: rgba(0, 0, 0, 0.15);
+}

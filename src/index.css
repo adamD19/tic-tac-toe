@@ -1,0 +1,18 @@
+/* Make the app fill the full viewport */
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+/* Let App.css control theme + background */
+body {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* Optional: remove default link styling conflicts */
+a {
+  text-decoration: none;
+}
